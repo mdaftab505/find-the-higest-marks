@@ -1,0 +1,110 @@
+#include <iostream>
+
+using namespace std;
+class departmentSca
+{
+     protected:
+         string studentName;
+         int roll,regno;
+         float marks;
+     departmentSca()
+     {
+         studentName="md aftab quraishi";
+         roll= 2;
+         regno=1129;
+         marks= 92;
+     }
+};
+
+class departmentEee
+{
+    protected:
+   string studentName;
+         int roll,regno;
+         float marks;
+     departmentEee()
+     {
+         studentName="shekher kumar";
+         roll= 32;
+         regno=10032;
+         marks= 89;
+     }
+};
+class departmentScs
+{
+protected:
+       string studentName;
+         int roll,regno;
+         float marks;
+     departmentScs()
+     {
+         studentName="sudhir kumar yadav";
+         roll= 22;
+         regno=1234;
+         marks= 96;
+     }
+};
+class dean: public departmentEee, public departmentSca, public departmentScs{
+
+       public:
+            int dept;
+
+           void getDetails()
+           {
+               cout<<" Please Enter the Department ID (111,222,333) for the following(SCS,EEE,SCA) Department, to get details of topper."<<endl;
+               cin>>dept;
+
+
+         }
+          void setDetails()
+          {      switch(dept)
+
+         {
+
+
+     case 111:
+            cout<<"The topper Details of SCS department is:-"<<endl;
+            cout<<"Name :"<<departmentScs::studentName<<endl;
+            cout<<"Reg no:"<<departmentScs::regno<<endl;
+            cout<<"Roll no"<<departmentScs::roll<<endl;
+            cout<<"Marks :"<<departmentScs::marks<<endl;
+            break;
+
+       case 222:
+            cout<<" The topper Details of EEE department is:-"<<endl;
+            cout<<"Name:"<<departmentEee::studentName<<endl;
+            cout<<"Reg no:"<<departmentEee::regno<<endl;
+            cout<<"Roll no:"<<departmentEee::roll<<endl;
+            cout<<"Marks :"<<departmentEee::marks<<endl;
+            break;
+
+      case 333:
+            cout<<"The topper Details of SCS department is:-"<<endl;
+            cout<<"Name :"<<departmentSca::studentName<<endl;
+            cout<<"Reg no :"<<departmentSca::regno<<endl;
+            cout<<"Roll no"<<departmentSca::roll<<endl;
+            cout<<"Marks :"<<departmentSca::marks<<endl;
+            break;
+
+
+
+     default:
+            cout<<"invalid Department";
+
+          }
+
+          }
+};
+
+int main()
+
+
+{
+  dean d1;
+  d1.getDetails();
+  d1.setDetails();
+
+
+   return 0;
+
+ }
